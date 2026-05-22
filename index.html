@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redwan Raad Portfolio</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:
+linear-gradient(
+135deg,
+#020617,
+#0B1120,
+#111827,
+#020617
+);
+
+background-size:400% 400%;
+animation:gradientMove 20s ease infinite;
+
+color:#F8FAFC;
+overflow-x:hidden;
+}
+
+@keyframes gradientMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+header{
+height:100vh;
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:0 10%;
+
+background:
+radial-gradient(
+circle at top right,
+rgba(139,92,246,.25),
+transparent 40%
+);
+
+gap:50px;
+}
+
+.header-text{
+flex:1;
+}
+
+.header-text h1{
+font-size:clamp(60px,8vw,120px);
+
+font-weight:900;
+
+background:
+linear-gradient(
+90deg,
+#ffffff,
+#c4b5fd,
+#8B5CF6
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+line-height:1;
+}
+
+.header-text p{
+font-size:28px;
+color:#CBD5E1;
+
+max-width:700px;
+
+line-height:1.6;
+}
+
+.header-image img{
+
+height:600px;
+
+border-radius:50%;
+
+padding:8px;
+
+background:
+linear-gradient(
+45deg,
+#2563eb,
+#60a5fa,
+#7c3aed
+);
+
+box-shadow:
+0 0 60px rgba(139,92,246,.6);
+
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-20px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,.5);
+backdrop-filter:blur(10px);
+padding:15px;
+z-index:1000;
+font-size: 30px;
+}
+
+nav ul{
+display:flex;
+justify-content:center;
+gap:30px;
+list-style:none;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#60a5fa;
+}
+
+section{
+padding:80px 10%;
+}
+
+.section-title{
+
+font-size:55px;
+
+color:#fff;
+
+position:relative;
+
+display:inline-block;
+
+margin-bottom:50px;
+
+}
+
+.section-title::after{
+
+content:"";
+
+position:absolute;
+
+bottom:-10px;
+
+left:0;
+
+width:60%;
+
+height:4px;
+
+border-radius:50px;
+
+background:#8B5CF6;
+
+}
+
+.card{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,.1);
+
+box-shadow:
+0 8px 32px rgba(0,0,0,.3);
+
+padding:50px;
+border-radius:25px;
+
+transition:.4s;
+font-size:20px;
+line-height:1.8;
+color:#E2E8F0;
+margin: 15px;
+}
+
+.card{
+
+opacity:0;
+
+transform:
+translateY(80px);
+
+transition:1s;
+}
+
+.card.show{
+
+opacity:1;
+
+transform:
+translateY(0);
+
+}
+
+.card:hover{
+transform:
+translateY(-10px)
+scale(1.02);
+
+box-shadow:
+0 20px 40px #8B5CF6;
+}
+
+.skills{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.skill{
+
+background:
+rgba(139,92,246,.15);
+
+border:
+1px solid rgba(139,92,246,.4);
+
+color:#E2E8F0;
+
+padding:12px 20px;
+
+transition:.3s;
+
+font-size:22px;
+
+}
+
+.skill:hover{
+
+transform:translateY(-5px);
+
+background:#8B5CF6;
+
+}
+
+footer{
+padding:30px;
+text-align:center;
+background:#020617;
+}
+
+.contact p{
+margin:10px 0;
+}
+
+body{
+position:relative;
+z-index:1;
+}
+
+body::before{
+content:"";
+
+position:fixed;
+
+width:500px;
+height:500px;
+
+top:-150px;
+right:-150px;
+
+background:#8B5CF6;
+
+border-radius:50%;
+
+filter:blur(180px);
+
+opacity:.15;
+
+z-index:-1;
+}
+
+body::after{
+content:"";
+
+position:fixed;
+
+width:400px;
+height:400px;
+
+bottom:-100px;
+left:-100px;
+
+background:#3B82F6;
+
+border-radius:50%;
+
+filter:blur(160px);
+
+opacity:.1;
+
+z-index:-1;
+}
+
+</style>
+</head>
+
+<body onload="window.scrollTo(0,0)">
+
+<nav>
+<ul>
+<li><a href="#about">About</a></li>
+<li>|</li>
+<li><a href="#education">Education</a></li>
+<li>|</li>
+<li><a href="#projects">Projects</a></li>
+<li>|</li>
+<li><a href="#skills">Skills</a></li>
+<li>|</li>
+<li><a href="#experience">Experience</a></li>
+<li>|</li>
+<li><a href="#volunteer">Volunteer</a></li>
+<li>|</li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<header>
+<div class="header-text">
+<h1>Redwan Raad George</h1>
+<p>Information Technology Specialist | Software Developer | Public Relations Specialist | Sales Specialist</p>
+</div>
+<div class="header-image">
+<img src="2.JPG" alt="Personal Picture" style="border:#0f172a solid 5px ;">
+</div>
+</header>
+
+<section id="about">
+<h2 class="section-title">About Me</h2>
+
+<div class="card">
+<p>
+I am a Fresh Information Technology Graduate with interests in Web Development,
+Software Development and Problem Solving, with previous experience in Sales and Client Seeking. I enjoy building
+projects that combine creativity with technology and continuously seek
+opportunities to improve my technical and communication skills.
+</p>
+</div>
+</section>
+
+<section id="education">
+
+<h2 class="section-title">Education</h2>
+
+<div class="card">
+<h3>Bachelor in Information Technology</h3>
+
+<p>
+Salahaddin University – College of Science
+</p>
+
+<p>
+Erbil, Kurdistan Region – Iraq
+</p>
+
+<p>
+2022 – 2026
+</p>
+
+</div>
+
+</section>
+
+
+<section id="projects">
+
+<h2 class="section-title">Projects</h2>
+
+<div class="card">
+
+<h3>AI Interview Assistant Website</h3>
+
+<p><b>Technologies:</b>
+HTML, CSS, JavaScript, PHP, MySQL, GroqCloud API
+</p>
+
+<ul>
+
+<li>Developed a web platform that simulates real interview scenarios.</li>
+
+<li>Implemented backend logic for user tracking and performance evaluation.</li>
+
+<li>Integrated AI generated questions and feedback analysis.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<section id="skills">
+
+<h2 class="section-title">Technical Skills</h2>
+
+<div class="skills">
+
+<div class="skill">C++</div>
+<div class="skill">C#</div>
+<div class="skill">PHP</div>
+<div class="skill">Python</div>
+<div class="skill">MATLAB</div>
+<div class="skill">Dart</div>
+<div class="skill">HTML</div>
+<div class="skill">CSS</div>
+<div class="skill">JavaScript</div>
+<div class="skill">Flutter</div>
+<div class="skill">OOP</div>
+<div class="skill">Data Structures</div>
+<div class="skill">Image Processing</div>
+<div class="skill">Information Security</div>
+<div class="skill">Database Design</div>
+<div class="skill">Arduino</div>
+<div class="skill">Microsoft Office</div>
+<div class="skill">Canva</div>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2 class="section-title">Soft Skills</h2>
+
+<div class="skills">
+
+<div class="skill">Teamwork</div>
+<div class="skill">Communication Skills</div>
+<div class="skill">Problem-solving</div>
+<div class="skill">Time Management</div>
+<div class="skill">Adaptability</div>
+<div class="skill">Leadership</div>
+<div class="skill">Presentation</div>
+<div class="skill">Teaching Skills</div>
+
+</div>
+
+</section>
+
+<section id="experience">
+
+<h2 class="section-title">Experience</h2>
+
+<div class="card">
+
+<h3>Public Relations Specialist</h3>
+
+<p>
+Command Marketing & Advertising Agency
+</p>
+
+<p>
+May 2024 – September 2024
+</p>
+
+<ul>
+<li>Managed client communication and campaign coordination.</li>
+<li>Assisted in marketing strategy execution.</li>
+<li>Secured new clients and supported business growth.</li>
+</ul>
+
+</div>
+
+
+<div class="card">
+
+<h3>Korek Telecom Internship Program</h3>
+
+<p>August 2025</p>
+
+</div>
+
+</section>
+
+
+<section id="volunteer">
+
+<h2 class="section-title">Volunteer Work</h2>
+
+<div class="card">
+
+<h3>Aramaic & Syriac Languages Teacher</h3>
+
+<p>Saint-George Church | Ankawa</p>
+
+<ul>
+
+<li>Taught Aramaic (Surath) and Syriac voluntarily.</li>
+
+<li>Guided students in pronunciation and language basics.</li>
+
+<li>Developed teaching and presentation skills.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<section>
+
+<h2 class="section-title">Languages</h2>
+
+<div class="skills">
+
+<div class="skill">Aramaic (Native)</div>
+
+<div class="skill">Arabic (Fluent)</div>
+
+<div class="skill">English (Fluent)</div>
+
+<div class="skill">Kurdish (Good)</div>
+
+</div>
+
+</section>
+
+
+
+<section id="contact">
+
+<h2 class="section-title">Contact</h2>
+
+<div class="card contact">
+
+<p>Email: redoraad12@gmail.com</p>
+
+<p>Phone: +9647519068449</p>
+
+<p>Location: Erbil, Iraq</p>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<p>© 2026 Redwan Raad Portfolio</p>
+
+</footer>
+<script>
+
+const cards=
+document.querySelectorAll(".card");
+
+const observer=
+new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+});
+
+cards.forEach(card=>{
+observer.observe(card);
+});
+
+</script>
+
+</body>
+
+</body>
+</html>
